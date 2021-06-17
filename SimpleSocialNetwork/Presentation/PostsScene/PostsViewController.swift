@@ -44,14 +44,6 @@ class PostsViewController: UIViewController {
     private func configureDataSource() {
         dataSource = PostsDataSource(with: tableView, delegate: self, navController: navigationController!)
     }
-
-    // MARK: - Helper Functions
-    func configureNoteText(for cell: UITableViewCell, with item: String) {
-      if let label = cell as? PostCell {
-       // label.setNote(using: item)
-      }
-    }
-    
     
 }
 

@@ -17,6 +17,7 @@ class DBManager {
 
     lazy var postDao = PostDao(storageContext: storageContextImpl())
     lazy var userDao = UserDao(storageContext: storageContextImpl())
+    lazy var userPostsDao = UserPostsDao(storageContext: storageContextImpl())
     
     private init() {
     }

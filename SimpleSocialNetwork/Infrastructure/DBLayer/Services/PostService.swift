@@ -9,17 +9,17 @@ import Foundation
 
 class PostService {
 
- func createPost(post: Post) {
-  do {
-       try DBManager.shared.postDao.save(object: post)
-     } catch {
-     }
- }
+    func createPost(post: Post) {
+        do {
+            try DBManager.shared.postDao.save(object: post)
+        } catch {
+            }
+    }
  
- func fetchPosts() -> [Post] {
+    func fetchPosts() -> [Post] {
   
-    return DBManager.shared.postDao.fetchAll()
+        return DBManager.shared.postDao.fetchAll()
       
- }
+    }
 
 }

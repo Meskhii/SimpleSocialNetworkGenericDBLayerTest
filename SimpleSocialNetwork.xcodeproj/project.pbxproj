@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8467188E267BACBA00F66BF4 /* UserPostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467188D267BACBA00F66BF4 /* UserPostsService.swift */; };
+		84671891267BAD9B00F66BF4 /* UserPostsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84671890267BAD9B00F66BF4 /* UserPostsDao.swift */; };
+		84671895267BADD600F66BF4 /* UserPostsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84671894267BADD600F66BF4 /* UserPostsEntity.swift */; };
+		84671899267BADE100F66BF4 /* UserPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84671898267BADE100F66BF4 /* UserPosts.swift */; };
 		849A4FD4267B3633003BC7AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A4FD3267B3633003BC7AB /* AppDelegate.swift */; };
 		849A4FD6267B3633003BC7AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A4FD5267B3633003BC7AB /* SceneDelegate.swift */; };
 		849A4FDE267B3633003BC7AB /* SimpleSocialNetwork.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 849A4FDC267B3633003BC7AB /* SimpleSocialNetwork.xcdatamodeld */; };
@@ -61,6 +65,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8467188D267BACBA00F66BF4 /* UserPostsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsService.swift; sourceTree = "<group>"; };
+		84671890267BAD9B00F66BF4 /* UserPostsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsDao.swift; sourceTree = "<group>"; };
+		84671894267BADD600F66BF4 /* UserPostsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsEntity.swift; sourceTree = "<group>"; };
+		84671898267BADE100F66BF4 /* UserPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPosts.swift; sourceTree = "<group>"; };
 		849A4FD0267B3633003BC7AB /* SimpleSocialNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSocialNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849A4FD3267B3633003BC7AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		849A4FD5267B3633003BC7AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +135,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84671893267BADC300F66BF4 /* UserPosts */ = {
+			isa = PBXGroup;
+			children = (
+				84671894267BADD600F66BF4 /* UserPostsEntity.swift */,
+				84671898267BADE100F66BF4 /* UserPosts.swift */,
+			);
+			path = UserPosts;
+			sourceTree = "<group>";
+		};
+		8467189B267BB58200F66BF4 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		849A4FC7267B3633003BC7AB = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +170,7 @@
 		849A4FD2267B3633003BC7AB /* SimpleSocialNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				8467189B267BB58200F66BF4 /* Test */,
 				849A5044267B4699003BC7AB /* Helpers */,
 				849A5039267B44CA003BC7AB /* Presentation */,
 				849A4FEB267B3769003BC7AB /* Infrastructure */,
@@ -217,6 +242,7 @@
 		849A5017267B3DC9003BC7AB /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				84671893267BADC300F66BF4 /* UserPosts */,
 				849A5072267B52B9003BC7AB /* Users */,
 				849A5071267B52B1003BC7AB /* Posts */,
 				849A501F267B3FBD003BC7AB /* DataBaseEntity.swift */,
@@ -231,6 +257,7 @@
 				849A5030267B418E003BC7AB /* PostDao.swift */,
 				849A5033267B41D2003BC7AB /* DBManager.swift */,
 				849A507A267B53FE003BC7AB /* UserDao.swift */,
+				84671890267BAD9B00F66BF4 /* UserPostsDao.swift */,
 			);
 			path = Daos;
 			sourceTree = "<group>";
@@ -336,6 +363,7 @@
 			children = (
 				849A507F267B553E003BC7AB /* UserService.swift */,
 				849A5082267B5549003BC7AB /* PostService.swift */,
+				8467188D267BACBA00F66BF4 /* UserPostsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -479,17 +507,21 @@
 				849A5012267B3C3A003BC7AB /* CoreDataStoreCoordinator.swift in Sources */,
 				849A5020267B3FBD003BC7AB /* DataBaseEntity.swift in Sources */,
 				849A5019267B3DE6003BC7AB /* PostEntity.swift in Sources */,
+				8467188E267BACBA00F66BF4 /* UserPostsService.swift in Sources */,
 				849A4FF9267B390C003BC7AB /* ConfigurationType.swift in Sources */,
 				849A5078267B52E4003BC7AB /* User.swift in Sources */,
 				849A502A267B4109003BC7AB /* Mapper.swift in Sources */,
 				849A5034267B41D2003BC7AB /* DBManager.swift in Sources */,
+				84671899267BADE100F66BF4 /* UserPosts.swift in Sources */,
 				849A4FDE267B3633003BC7AB /* SimpleSocialNetwork.xcdatamodeld in Sources */,
 				849A5083267B5549003BC7AB /* PostService.swift in Sources */,
 				84E5B367267B7E340005EC88 /* EditPostTableViewController.swift in Sources */,
 				849A5015267B3CFB003BC7AB /* NSManagedObject+Extension.swift in Sources */,
+				84671895267BADD600F66BF4 /* UserPostsEntity.swift in Sources */,
 				849A4FD6267B3633003BC7AB /* SceneDelegate.swift in Sources */,
 				849A504A267B46DF003BC7AB /* LoginViewController.swift in Sources */,
 				84E5B36D267B7E9B0005EC88 /* MyPostsViewController.swift in Sources */,
+				84671891267BAD9B00F66BF4 /* UserPostsDao.swift in Sources */,
 				849A4FF3267B381D003BC7AB /* StorableProtocol.swift in Sources */,
 				84E21D58267B947A0000B751 /* MyPostsDataSource.swift in Sources */,
 			);

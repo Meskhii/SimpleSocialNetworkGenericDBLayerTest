@@ -9,9 +9,15 @@
     <entity name="UserEntity" representedClassName=".UserEntity" syncable="YES">
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
+        <relationship name="userPosts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserPostsEntity" inverseName="user" inverseEntity="UserPostsEntity"/>
+    </entity>
+    <entity name="UserPostsEntity" representedClassName=".UserPostsEntity" syncable="YES">
+        <attribute name="postUUID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserEntity" inverseName="userPosts" inverseEntity="UserEntity"/>
     </entity>
     <elements>
         <element name="PostEntity" positionX="-63" positionY="-18" width="128" height="89"/>
-        <element name="UserEntity" positionX="-54" positionY="18" width="128" height="59"/>
+        <element name="UserEntity" positionX="-54" positionY="18" width="128" height="74"/>
+        <element name="UserPostsEntity" positionX="-54" positionY="18" width="128" height="59"/>
     </elements>
 </model>

@@ -33,54 +33,24 @@ class PostsDataSource: NSObject {
     
     private func fetchPosts() {
        posts = postService.fetchPosts()
-        print("posts: \(posts)")
     }
     
 }
 
-// MARK: - UITableView Data Source
-extension PostsDataSource: UITableViewDataSource {
+// MARK: - UITableView Data Source & Delegate
+extension PostsDataSource: UITableViewDataSource, UITableViewDelegate  {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return posts.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.deque(PostCell.self, for: indexPath)
         
-   //     cell.setNote(using: NotesList.shared.notes[indexPath.row])
+        if !posts.isEmpty {
+            cell.configure(with: posts[indexPath.row])
+        }
         
         return cell
     }
 }
-
-// MARK: - UITableView Delegate
-extension PostsDataSource: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-    //    NotesList.shared.notes.remove(at: indexPath.row)
-        
-        tableView.reloadData()
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        tableView.deselectRow(at: indexPath, animated: false)
-    
-        let storyboard = UIStoryboard(name: VCIds.addPostTVC, bundle: nil)
-        guard let postInteractorVC = storyboard.instantiateViewController(identifier: VCIds.addPostTVC) as? AddPostTableViewController else {return}
-        postInteractorVC.delegate = delegate
-        postInteractorVC.navTitle = "Edit Item"
-    
-        self.navController?.pushViewController(postInteractorVC, animated: true)
-    }
-
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
-//        NotesList.shared.moveNote(item: NotesList.shared.notes[sourceIndexPath.row], to: destinationIndexPath.row)
-        
-        tableView.reloadData()
-    }
-
-}
-

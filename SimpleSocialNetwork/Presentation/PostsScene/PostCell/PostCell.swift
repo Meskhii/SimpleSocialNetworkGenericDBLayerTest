@@ -25,8 +25,9 @@ class PostCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure() {
-        
+    func configure(with post: Post) {
+        postTitleLabel.text = post.title
+        postDescription.text = post.postDescription
     }
     
 }

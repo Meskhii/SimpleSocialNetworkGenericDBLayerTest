@@ -18,7 +18,9 @@ class AddPostTableViewController: UITableViewController {
     // MARK: - Variables
     private var saveBarButtonItem = UIBarButtonItem()
     private var postService = PostService()
+    private var userPostService = UserPostsService()
     private var post: Post!
+    private var userPost: UserPosts!
     
     weak var delegate: AddPostTableViewControllerDelegate?
     var navTitle = String()
@@ -54,6 +56,7 @@ class AddPostTableViewController: UITableViewController {
         if checkInputs() {
             createPost()
             postService.createPost(post: post)
+            userPostService.save(userPost: userPost)
             delegate?.postInteractionDidSave(self)
         } else {
             showAlert(with: "Fill All Fields")
@@ -72,10 +75,14 @@ class AddPostTableViewController: UITableViewController {
     
     private func createPost() {
         let uuid = UUID()
+        
         post = Post()
         post.title = postTitleTextField.text!
         post.postDescription = postDescriptionTextField.text!
         post.postUUID = uuid
+        
+        userPost = UserPosts()
+        userPost.postUUID = uuid
     }
     
     // MARK: - Helper Methods
