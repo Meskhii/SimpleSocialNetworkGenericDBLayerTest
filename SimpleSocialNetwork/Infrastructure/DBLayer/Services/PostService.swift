@@ -16,9 +16,9 @@ class PostService {
      }
  }
  
- func fetchStoryByPostNumber(postNumber: String) -> Post? {
+ func fetchPosts() -> [Post] {
   
-    return DBManager.shared.postDao.findById(postNumber: postNumber)
+    return DBManager.shared.postDao.fetchAll()
       
  }
 

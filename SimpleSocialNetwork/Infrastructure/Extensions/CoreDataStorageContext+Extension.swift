@@ -53,6 +53,19 @@ extension CoreDataStorageContext {
         }
         return result
     }
+    
+    func fetchAll(_ model: Storable.Type) -> [Storable] {
+        var result = [Storable]()
+        
+        do {
+            if let entities = try managedContext!.fetch(PostEntity.fetchRequest()) as? [PostEntity] {
+                result = entities
+            }
+        } catch {
+            print(error)
+        }
+        return result
+    }
 
     func objectWithObjectId<DBEntity: Storable>(objectId: NSManagedObjectID) -> DBEntity? {
         do {

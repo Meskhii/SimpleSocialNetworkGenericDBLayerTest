@@ -14,6 +14,9 @@ class PostsDataSource: NSObject {
     private var navController: UINavigationController?
     private var delegate: AddPostTableViewControllerDelegate?
     
+    private var postService = PostService()
+    private var posts = [Post]()
+    
     // MARK: - Inits
     init(with tableView: UITableView, delegate: AddPostTableViewControllerDelegate, navController: UINavigationController) {
         super.init()
@@ -25,6 +28,12 @@ class PostsDataSource: NSObject {
         self.delegate = delegate
         self.navController = navController
         
+        fetchPosts()
+    }
+    
+    private func fetchPosts() {
+       posts = postService.fetchPosts()
+        print("posts: \(posts)")
     }
     
 }

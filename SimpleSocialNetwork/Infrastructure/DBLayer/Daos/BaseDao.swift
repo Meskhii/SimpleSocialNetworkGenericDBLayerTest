@@ -61,6 +61,11 @@ class BaseDao<DomainEntity: Mappable, DBEntity: Storable> {
         let dbEntities = storageContext?.fetch(DBEntity.self, predicate: predicate, sorted: sorted) as? [DBEntity]
         return mapToDomain(dbEntities: dbEntities)
     }
+    
+    func fetchAll() -> [DomainEntity] {
+        let dbEntities = storageContext?.fetchAll(DBEntity.self) as? [DBEntity]
+        return mapToDomain(dbEntities: dbEntities)
+    }
 
     private func mapToDomain<DBEntity: Storable>(dbEntity: DBEntity) -> DomainEntity {
         var domainEntity = DomainEntity.init()

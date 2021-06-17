@@ -22,4 +22,6 @@ protocol StorageContext {
     func deleteAll(_ model: Storable.Type) throws
 
     func fetch(_ model: Storable.Type, predicate: NSPredicate?, sorted: Sorted?) -> [Storable]
+    
+    func fetchAll(_ model: Storable.Type) -> [Storable]
 }

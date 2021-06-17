@@ -9,7 +9,7 @@ import UIKit
 
 class PostDao: BaseDao<Post, PostEntity> {
 
-    func findById(postNumber: String) -> Post? {
-        return super.fetch(predicate: NSPredicate(format: "postNumber = %"+postNumber)).last
+    func allPosts() -> [Post] {
+        return super.fetchAll()
     }
 }
