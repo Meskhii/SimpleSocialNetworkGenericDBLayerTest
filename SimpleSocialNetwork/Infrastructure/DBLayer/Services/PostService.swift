@@ -18,7 +18,7 @@ class PostService {
  
     func fetchPosts() -> [Post] {
   
-        return DBManager.shared.postDao.fetchAll()
+        return DBManager.shared.postDao.fetchAllPosts()
       
     }
 

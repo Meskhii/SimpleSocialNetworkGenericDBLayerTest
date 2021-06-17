@@ -23,5 +23,8 @@ protocol StorageContext {
 
     func fetch(_ model: Storable.Type, predicate: NSPredicate?, sorted: Sorted?) -> [Storable]
     
-    func fetchAll(_ model: Storable.Type) -> [Storable]
+    func fetchAllPosts(_ model: Storable.Type) -> [Storable]
+    
+    func fetchAllPostUUIDsForUser(_ model: Storable.Type) -> [Storable]
+
 }

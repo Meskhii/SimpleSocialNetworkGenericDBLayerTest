@@ -83,6 +83,7 @@ class AddPostTableViewController: UITableViewController {
         
         userPost = UserPosts()
         userPost.postUUID = uuid
+        
     }
     
     // MARK: - Helper Methods

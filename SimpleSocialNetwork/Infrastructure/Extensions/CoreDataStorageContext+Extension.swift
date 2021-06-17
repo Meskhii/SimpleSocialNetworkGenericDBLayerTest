@@ -15,6 +15,9 @@ extension CoreDataStorageContext {
                                                             in: managedContext!)
         let entity = NSManagedObject(entity: entityDescription!,
                                      insertInto: managedContext)
+        
+        
+        
         return entity as? DBEntity
     }
 
@@ -54,11 +57,24 @@ extension CoreDataStorageContext {
         return result
     }
     
-    func fetchAll(_ model: Storable.Type) -> [Storable] {
+    func fetchAllPosts(_ model: Storable.Type) -> [Storable] {
         var result = [Storable]()
         
         do {
             if let entities = try managedContext!.fetch(PostEntity.fetchRequest()) as? [PostEntity] {
+                result = entities
+            }
+        } catch {
+            print(error)
+        }
+        return result
+    }
+    
+    func fetchAllPostUUIDsForUser(_ model: Storable.Type) -> [Storable] {
+        var result = [Storable]()
+        
+        do {
+            if let entities = try managedContext!.fetch(UserPostsEntity.fetchRequest()) as? [UserPostsEntity] {
                 result = entities
             }
         } catch {

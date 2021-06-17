@@ -29,7 +29,7 @@ class SignUpViewController: UIViewController {
         if checkInputs() {
             createUser()
             userService.createUser(user: user)
-            navigateToPosts()
+            navigateToWelcome()
         } else {
             showAlert()
         }
@@ -58,11 +58,8 @@ class SignUpViewController: UIViewController {
     }
     
     // MARK: - Navigation Method
-    private func navigateToPosts() {
-        let sb = UIStoryboard(name: VCIds.postsVC, bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: VCIds.postsVC)
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+    private func navigateToWelcome() {
+        self.navigationController?.popViewController(animated: true)
     }
 
 }

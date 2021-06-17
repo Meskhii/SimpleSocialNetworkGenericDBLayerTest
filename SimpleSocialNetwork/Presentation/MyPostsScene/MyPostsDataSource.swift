@@ -14,6 +14,12 @@ class MyPostsDataSource: NSObject {
     private var navController: UINavigationController?
     private var delegate: EditPostTableViewControllerDelegate?
     
+    private var userPostService = UserPostsService()
+    private var userPosts = [UserPosts]()
+    
+    private var postService = PostService()
+    private var posts = [Post]()
+    
     // MARK: - Inits
     init(with tableView: UITableView, delegate: EditPostTableViewControllerDelegate, navController: UINavigationController) {
         super.init()
@@ -25,6 +31,19 @@ class MyPostsDataSource: NSObject {
         self.delegate = delegate
         self.navController = navController
         
+        fetchPostUUIDsForUser()
+    }
+    
+    private func fetchPostUUIDsForUser() {
+        userPosts = userPostService.fetchPostUUIDsForUser()
+        for post in userPosts {
+            print("User \(post.postUUID)")
+        }
+        
+    }
+    
+    private func fetchPostsForUser() {
+       posts = postService.fetchPosts()
     }
     
 }

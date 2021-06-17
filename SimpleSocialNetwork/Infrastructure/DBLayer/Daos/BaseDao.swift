@@ -62,8 +62,13 @@ class BaseDao<DomainEntity: Mappable, DBEntity: Storable> {
         return mapToDomain(dbEntities: dbEntities)
     }
     
-    func fetchAll() -> [DomainEntity] {
-        let dbEntities = storageContext?.fetchAll(DBEntity.self) as? [DBEntity]
+    func fetchAllPosts() -> [DomainEntity] {
+        let dbEntities = storageContext?.fetchAllPosts(DBEntity.self) as? [DBEntity]
+        return mapToDomain(dbEntities: dbEntities)
+    }
+    
+    func fetchAllUUIDsForUser() -> [DomainEntity] {
+        let dbEntities = storageContext?.fetchAllPostUUIDsForUser(DBEntity.self) as? [DBEntity]
         return mapToDomain(dbEntities: dbEntities)
     }
 

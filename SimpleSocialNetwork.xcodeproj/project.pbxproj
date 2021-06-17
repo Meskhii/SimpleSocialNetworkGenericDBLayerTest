@@ -144,13 +144,6 @@
 			path = UserPosts;
 			sourceTree = "<group>";
 		};
-		8467189B267BB58200F66BF4 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		849A4FC7267B3633003BC7AB = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +163,6 @@
 		849A4FD2267B3633003BC7AB /* SimpleSocialNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				8467189B267BB58200F66BF4 /* Test */,
 				849A5044267B4699003BC7AB /* Helpers */,
 				849A5039267B44CA003BC7AB /* Presentation */,
 				849A4FEB267B3769003BC7AB /* Infrastructure */,

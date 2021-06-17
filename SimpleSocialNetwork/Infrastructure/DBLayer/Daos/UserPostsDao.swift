@@ -10,6 +10,6 @@ import Foundation
 class UserPostsDao: BaseDao<UserPosts, UserPostsEntity> {
 
     func allPostsForUser() -> [UserPosts] {
-        return super.fetchAll()
+        return super.fetchAllUUIDsForUser()
     }
 }

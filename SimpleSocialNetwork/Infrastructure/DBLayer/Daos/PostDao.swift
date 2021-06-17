@@ -10,6 +10,6 @@ import UIKit
 class PostDao: BaseDao<Post, PostEntity> {
 
     func allPosts() -> [Post] {
-        return super.fetchAll()
+        return super.fetchAllPosts()
     }
 }

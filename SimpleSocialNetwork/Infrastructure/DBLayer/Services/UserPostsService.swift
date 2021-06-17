@@ -18,7 +18,7 @@ class UserPostsService {
         }
     }
  
-    func fetchPostsForUser() -> [UserPosts] {
+    func fetchPostUUIDsForUser() -> [UserPosts] {
   
         return DBManager.shared.userPostsDao.allPostsForUser()
       
